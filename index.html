@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>stella wu — comedian</title>
+<meta name="description" content="stella wu. comedian. formerly a banker (mum's still upset about it). shows, mailing list, bookings.">
+<meta property="og:title" content="stella wu — comedian">
+<meta property="og:description" content="be first to hear about shows. no spam, promise.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎤</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F8F1E4;
+    --ink: #201713;
+    --red: #C8281E;
+    --red-deep: #9E1B14;
+    --mustard: #E3A31C;
+    --line: rgba(32, 23, 19, 0.22);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: "Bricolage Grotesque", "PingFang HK", "Hiragino Sans", sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* paper grain */
+    background-image:
+      radial-gradient(rgba(32,23,19,0.045) 1px, transparent 1px),
+      radial-gradient(rgba(32,23,19,0.03) 1px, transparent 1px);
+    background-size: 5px 5px, 9px 9px;
+    background-position: 0 0, 3px 4px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 430px;
+    padding: 34px 22px 0;
+    flex: 1;
+  }
+
+  /* ---------- header ---------- */
+  header { position: relative; margin-bottom: 26px; }
+
+  .stamp {
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--red);
+    border: 1.5px solid var(--red);
+    border-radius: 50%;
+    width: 74px;
+    height: 74px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    transform: rotate(11deg);
+    opacity: 0.85;
+    animation: stampIn 0.5s cubic-bezier(0.2, 1.6, 0.4, 1) 0.55s backwards;
+  }
+  .stamp span { font-size: 13px; }
+
+  @keyframes stampIn {
+    from { transform: rotate(30deg) scale(2.1); opacity: 0; }
+    to   { transform: rotate(11deg) scale(1); opacity: 0.85; }
+  }
+
+  h1 {
+    font-size: clamp(52px, 15vw, 64px);
+    font-weight: 800;
+    font-variation-settings: "opsz" 96;
+    letter-spacing: -0.03em;
+    line-height: 0.92;
+    animation: rise 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) backwards;
+  }
+  h1 .hk {
+    display: block;
+    color: var(--red);
+    font-size: 0.42em;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+    margin-top: 8px;
+  }
+
+  .tagline {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 30ch;
+    animation: rise 0.6s cubic-bezier(0.2, 0.9, 0.3, 1) 0.1s backwards;
+  }
+  .tagline em { font-style: normal; color: var(--red-deep); }
+
+  @keyframes rise {
+    from { transform: translateY(14px); opacity: 0; }
+    to   { transform: none; opacity: 1; }
+  }
+
+  /* ---------- menu rule ---------- */
+  .rule {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 22px 0 18px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--red);
+    animation: rise 0.6s 0.18s backwards;
+  }
+  .rule::before, .rule::after {
+    content: "";
+    flex: 1;
+    border-top: 2px dashed var(--line);
+  }
+
+  /* ---------- ticket form ---------- */
+  .ticket {
+    position: relative;
+    background: #fff;
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    padding: 20px 18px 18px;
+    box-shadow: 5px 5px 0 var(--red);
+    animation: rise 0.6s 0.26s backwards;
+  }
+  /* perforation notches */
+  .ticket::before, .ticket::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-radius: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket::before { left: -11px; clip-path: inset(0 0 0 50%); border-left: none; }
+  .ticket::after  { right: -11px; clip-path: inset(0 50% 0 0); border-right: none; }
+
+  .ticket h2 {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+  }
+  .ticket p {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.75;
+  }
+
+  form { margin-top: 14px; display: flex; flex-direction: column; gap: 10px; }
+
+  input[type="email"] {
+    font-family: inherit;
+    font-size: 16px;
+    padding: 13px 14px;
+    border: 2px solid var(--ink);
+    border-radius: 9px;
+    background: var(--paper);
+    color: var(--ink);
+    width: 100%;
+    transition: box-shadow 0.15s;
+  }
+  input[type="email"]::placeholder { color: rgba(32,23,19,0.4); }
+  input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(200, 40, 30, 0.25);
+  }
+
+  .hp { position: absolute; left: -5000px; opacity: 0; }
+
+  button {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    padding: 14px;
+    border: 2px solid var(--ink);
+    border-radius: 9px;
+    background: var(--red);
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.12s, box-shadow 0.12s, background 0.15s;
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  button:hover, button:focus-visible { background: var(--red-deep); }
+  button:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--ink); }
+  button:disabled { opacity: 0.6; cursor: wait; }
+
+  .form-msg {
+    font-size: 14px;
+    line-height: 1.45;
+    display: none;
+    margin-top: 2px;
+  }
+  .form-msg.ok { color: var(--red-deep); font-weight: 600; }
+  .form-msg.err { color: var(--red); }
+  .form-msg.show { display: block; }
+
+  .ticket.done form { display: none; }
+  .ticket.done .form-msg.ok { display: block; animation: rise 0.4s; }
+
+  /* ---------- links ---------- */
+  .links {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .links li:nth-child(1) { animation: rise 0.6s 0.34s backwards; }
+  .links li:nth-child(2) { animation: rise 0.6s 0.42s backwards; }
+  .links li:nth-child(3) { animation: rise 0.6s 0.5s backwards; }
+
+  .links a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 16px;
+    background: transparent;
+    border: 2px solid var(--ink);
+    border-radius: 12px;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: transform 0.12s, box-shadow 0.12s, background 0.15s;
+  }
+  .links a:hover, .links a:focus-visible {
+    background: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0 var(--mustard);
+  }
+  .links a:active { transform: none; box-shadow: none; }
+
+  .links .zh {
+    color: var(--red);
+    font-size: 15px;
+    font-weight: 400;
+    flex-shrink: 0;
+  }
+  .links small {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.55;
+    text-align: right;
+  }
+
+  /* ---------- marquee footer ---------- */
+  .marquee {
+    width: 100%;
+    margin-top: 34px;
+    border-top: 2px solid var(--ink);
+    background: var(--red);
+    color: var(--paper);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 9px 0;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: scroll 22s linear infinite;
+  }
+  .marquee-track span { margin: 0 18px; }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .colophon {
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    padding: 10px 0 14px;
+    opacity: 0.5;
+    background: var(--ink);
+    color: var(--paper);
+    letter-spacing: 0.06em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <header>
+    <div class="stamp">syd<span>↔</span>hkg</div>
+    <h1>stella wu<span class="hk">comedian 棟篤笑</span></h1>
+    <p class="tagline">formerly a banker. <em>mum's still upset about it.</em></p>
+  </header>
+
+  <div class="rule">today's specials</div>
+
+  <section class="ticket" id="ticket">
+    <h2>be first to hear about shows</h2>
+    <p>tickets sell out and I refuse to be the one who didn't tell you. no spam — just show announcements and the occasional soup update.</p>
+    <form id="signup" novalidate>
+      <input type="email" name="email" id="email" placeholder="your email" autocomplete="email" inputmode="email" required>
+      <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button type="submit" id="submitBtn">save my seat</button>
+    </form>
+    <p class="form-msg ok">you're in. tell your friends, I need ticket sales.</p>
+    <p class="form-msg err" id="errMsg">that didn't work — check the email and try again?</p>
+  </section>
+
+  <ul class="links">
+    <li>
+      <a href="https://www.instagram.com/firstbitesshow/" target="_blank" rel="noopener">
+        <span class="zh">食</span> first bites <small>my food show</small>
+      </a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/stellawwwu/" target="_blank" rel="noopener">
+        <span class="zh">笑</span> instagram <small>@stellawwwu</small>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:stellawucomedy@gmail.com?subject=booking%20enquiry">
+        <span class="zh">約</span> book me <small>corporate, clubs, festivals</small>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marqueeTrack">
+    <span>did you watch the game?</span><span>★</span>
+    <span>did you pass the test?</span><span>★</span>
+    <span>did you watch the game?</span><span>★</span>
+    <span>did you pass the test?</span><span>★</span>
+  </div>
+</div>
+
+<div class="colophon">hong kong made · sydney based</div>
+
+<script>
+  // Google Apps Script endpoint — set after deploying gas/Code.gs
+  var SCRIPT_URL = "__SCRIPT_URL__";
+
+  // duplicate marquee content so the 50% translate loops seamlessly
+  var track = document.getElementById("marqueeTrack");
+  track.innerHTML += track.innerHTML;
+
+  document.getElementById("signup").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var email = document.getElementById("email").value.trim();
+    var hp = document.querySelector(".hp").value;
+    var err = document.getElementById("errMsg");
+    var btn = document.getElementById("submitBtn");
+    err.classList.remove("show");
+
+    if (hp) return; // bot
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || SCRIPT_URL.indexOf("http") !== 0) {
+      err.classList.add("show");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "saving…";
+
+    fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "text/plain;charset=utf-8" },
+      body: JSON.stringify({ email: email, source: "link-in-bio", ts: new Date().toISOString() })
+    }).then(function () {
+      document.getElementById("ticket").classList.add("done");
+    }).catch(function () {
+      err.classList.add("show");
+      btn.disabled = false;
+      btn.textContent = "save my seat";
+    });
+  });
+</script>
+</body>
+</html>
